@@ -1,3 +1,4 @@
+import type { TodoItemProps } from "@/app/types/todo";
 import { Ionicons } from "@expo/vector-icons";
 import React, { useState } from "react";
 import {
@@ -7,14 +8,13 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { TodoItemProps } from "../types/todo";
 
-export const TodoItem: React.FC<TodoItemProps> = ({
+export default function TodoItem({
   todo,
   onToggle,
   onDelete,
   onEdit,
-}) => {
+}: TodoItemProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(todo.text);
 
@@ -71,7 +71,7 @@ export const TodoItem: React.FC<TodoItemProps> = ({
       )}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

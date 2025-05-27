@@ -1,4 +1,4 @@
-import { TodoItem } from "@/app/components/TodoItem";
+import TodoItem from "@/app/components/TodoItem";
 import type { TodoItemData } from "@/app/types/todo";
 import React, { useState } from "react";
 import {
@@ -12,7 +12,7 @@ import {
   View,
 } from "react-native";
 
-export const TodoList: React.FC = () => {
+export default function Todo() {
   const [todos, setTodos] = useState<TodoItemData[]>([]);
   const [newTask, setNewTask] = useState("");
 
@@ -82,7 +82,7 @@ export const TodoList: React.FC = () => {
       />
     </KeyboardAvoidingView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
